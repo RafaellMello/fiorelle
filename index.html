@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fiorelle™</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="pics/favicon.png" />
+</head>
+<body>
+  <!-- Announcement bar -->
+  <div class="announcement-bar">
+    <p>Frete Grátis em compras acima de R$ 129</p>
+  </div>
+
+  <!-- Header com logo e menu -->
+  <header>
+    <div class="header-content">
+      <div class="logo">Fiorelle™</div>
+      <nav class="main-menu">
+        <a href="#joias">Joias</a>
+        <a href="#casamento">Casamento</a>
+        <a href="#relogios">Relógios</a>
+        <a href="#acessorios">Acessórios</a>
+        <a href="#masculino">Masculino</a>
+        <a href="#presentes">Presentes</a>
+        <a href="#sale">Sale</a>
+      </nav>
+      <div class="header-icons">
+        <input type="text" placeholder="Buscar" class="search-input">
+        <span class="icon">&#128722;</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Banner principal só com slideshow full width -->
+  <section class="hero-banner">
+    <img id="banner-image" src="pics/banner2.png" alt="Modelo com joias" class="fade-image" loading="lazy" />
+  </section>
+
+  <!-- Seção de produtos -->
+
+  <section class="product-section">
+  <div class="section-header">
+    <h2>Jóias Fiorelle</h2>
+    <p class="subtitle">SALE</p>
+  </div>
+
+  <section class="product-grid" id="joias">
+  <div class="product-card fade-in">
+    <img src="pics/produto1.png" alt="Produto 1" loading="lazy">
+    <h3>Argola Helo Banhada à Prata</h3>
+    <p class="preco">R$ 149,90</p>
+    <p class="parcelado">ou 3x de R$ 49,97 sem juros</p>
+    <button class="btn-comprar">Comprar</button>
+  </div>
+
+  <div class="product-card fade-in">
+    <img src="pics/produto2.png" alt="Produto 2" loading="lazy">
+    <h3>Colar Tiffany em Aço Inox</h3>
+    <p class="preco">R$ 199,90</p>
+    <p class="parcelado">ou 4x de R$ 49,97 sem juros</p>
+    <button class="btn-comprar">Comprar</button>
+  </div>
+
+  <div class="product-card fade-in">
+    <img src="pics/produto3.png" alt="Produto 3" loading="lazy">
+    <h3>Colar Cravejado com Zircônia</h3>
+    <p class="preco">R$ 129,90</p>
+    <p class="parcelado">ou 2x de R$ 64,95 sem juros</p>
+    <button class="btn-comprar">Comprar</button>
+  </div>
+
+  <div class="product-card fade-in">
+    <img src="pics/produto4.png" alt="Produto 4" loading="lazy">
+    <h3>Colar Barbie Banhado à Ouro</h3>
+    <p class="preco">R$ 89,90</p>
+    <p class="parcelado">ou 3x de R$ 29,97 sem juros</p>
+    <button class="btn-comprar">Comprar</button>
+  </div>
+</section>
+
+
+  <!-- Footer -->
+  <footer>
+    <div class="social-menu">
+      <a href="https://www.instagram.com" target="_blank">Instagram</a>
+      <a href="https://wa.me/seunumero" target="_blank">Whatsapp</a>
+    </div>
+    <p>&copy; 2025 Fiorelle™ - Todos os direitos reservados.</p>
+  </footer>
+
+  <script>
+    // Lazy animation on scroll
+    const cards = document.querySelectorAll(".fade-in");
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("show");
+        }
+      });
+    }, {
+      threshold: 0.5
+    });
+    cards.forEach(card => observer.observe(card));
+
+    // Slideshow banner com fade
+    const bannerImages = [
+      "pics/banner2.png",
+      "pics/banner2.png"
+    ];
+    let currentIndex = 0;
+    const bannerImg = document.getElementById("banner-image");
+
+    function changeImage() {
+      bannerImg.classList.add("fade-out");
+      setTimeout(() => {
+        currentIndex = (currentIndex + 1) % bannerImages.length;
+        bannerImg.src = bannerImages[currentIndex];
+        bannerImg.classList.remove("fade-out");
+      }, 1000); // tempo do fade-out
+    }
+
+    setInterval(changeImage, 3000);
+  </script>
+</body>
+</html>

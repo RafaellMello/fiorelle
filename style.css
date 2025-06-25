@@ -1,0 +1,280 @@
+/* === style.css === */
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@100;400;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Georgia', serif;
+  background-color: #fff;
+  color: #111;
+  line-height: 1.6;
+}
+
+.announcement-bar {
+  background-color: #13312A;
+  color: #fff;
+  text-align: center;
+  padding: 8px 0;
+  font-size: 14px;
+  font-weight: 100;
+}
+
+header {
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  padding: 15px 30px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.main-menu a {
+  margin: 0 12px;
+  text-decoration: none;
+  color: #111;
+  font-weight: 500;
+  font-size: 14px;
+  position: relative;
+}
+
+.main-menu a:hover::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #111;
+}
+
+.header-icons {
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  padding: 5px 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin-right: 15px;
+  font-size: 14px;
+}
+
+/* Fade suave para o banner */
+.fade-image {
+  transition: opacity 1s ease-in-out;
+  opacity: 1;
+}
+.fade-image.fade-out {
+  opacity: 0;
+}
+
+/* Ajustes para o slideshow ocupar 100% */
+.hero-banner {
+  width: 100%;
+  height: 800px;       /* altura fixa */
+  overflow: hidden;
+  background-color: #f7f7f7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-banner img {
+  height: 800px;      /* altura fixa */
+  width: 100%;        /* largura automática para manter proporção */
+  max-width: 100%;    /* para nunca ultrapassar a largura da tela */
+  display: block;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.section-header h2 {
+  font-family: 'Georgia', serif;
+  font-weight: normal;
+  font-size: 2.5rem;
+  color: #111;
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+  margin-top: 15px;
+}
+
+.section-header .subtitle {
+  font-family: 'Georgia', sans-serif;
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: #000000; /* vermelho forte para dar destaque */
+  letter-spacing: 0.15em;
+  margin-top: 0;
+}
+
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  padding: 50px 10%;
+  background-color: #fff;
+}
+
+.product-card {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: center;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.product-card img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.product-card h3 {
+  padding: 15px 0 5px;
+  font-size: 16px;
+  font-weight: normal;
+}
+
+.product-card .preco {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #000000;
+  margin-bottom: 5px;
+}
+
+.product-card .parcelado {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.9rem;
+  color: #333232;
+  margin-bottom: 10px;
+}
+
+.product-card .btn-comprar {
+  display: inline-block;
+  font-family: 'Open Sans', sans-serif;
+  background-color: #13312A;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 14px;
+  text-decoration: none; /* REMOVE sublinhado */
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.product-card .btn-comprar:hover {
+  background-color: #000000;
+}
+
+.product-card:hover {
+  transform: translateY(0) scale(1.02);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+footer {
+  background-color: #111;
+  color: #fff;
+  text-align: center;
+  padding: 30px;
+  font-size: 14px;
+}
+
+.social-menu {
+  margin-bottom: 10px;
+}
+
+.social-menu a {
+  margin: 0 12px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.social-menu a:hover {
+  color: #ccc;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  transition: all 0.9s ease-out;
+}
+
+.product-grid .product-card img {
+  width: 350px;
+  height: 522px;
+  object-fit: cover;
+  margin: 0 auto;
+  display: block;
+}
+
+
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* Ajuste para o banner responsivo */
+  .hero-banner {
+    padding: 0;
+  }
+
+  .main-menu {
+    flex-wrap: wrap;
+    margin-top: 10px;
+  }
+
+  .search-input {
+    width: 100%;
+    margin: 10px 0;
+  }
+}
