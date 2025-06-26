@@ -26,10 +26,10 @@
   <div class="side-menu-title">Conheça nossas Coleções</div>
   <a href="#joias">Joias</a>
   <a href="#casamento">Casamento</a>
-  <a href="#relogios">Relógios</a>
-  <a href="#acessorios">Acessórios</a>
+  <a href="#relogios">Aço Inox</a>
+  <a href="#acessorios">Banhados</a>
   <a href="#masculino">Masculino</a>
-  <a href="#presentes">Presentes</a>
+  <a href="#presentes">Acessórios</a>
   <a href="#sale">Sale</a>
 </nav>
 
@@ -37,10 +37,10 @@
   <div class="side-menu-title">Conheça nossas Coleções</div>
   <a href="#joias">Joias</a>
   <a href="#casamento">Casamento</a>
-  <a href="#relogios">Relógios</a>
-  <a href="#acessorios">Acessórios</a>
+  <a href="#relogios">Aço Inox</a>
+  <a href="#acessorios">Banhados</a>
   <a href="#masculino">Masculino</a>
-  <a href="#presentes">Presentes</a>
+  <a href="#presentes">Acessórios</a>
   <a href="#sale">Sale</a>
 </nav>
 
@@ -247,6 +247,26 @@ overlay.addEventListener('click', closeMenus);
 document.querySelectorAll('.side-menu a').forEach(link => {
   link.addEventListener('click', closeMenus);
 });
+
+document.addEventListener('click', function(event) {
+  // Verifica se o menu está aberto (qualquer um dos dois)
+  const isLeftOpen = sideMenuLeft.classList.contains('open-left');
+  const isRightOpen = sideMenuRight.classList.contains('open-right');
+  
+  if (isLeftOpen || isRightOpen) {
+    // Se o clique NÃO for dentro dos menus nem nos botões
+    if (
+      !sideMenuLeft.contains(event.target) &&
+      !sideMenuRight.contains(event.target) &&
+      !menuLeftBtn.contains(event.target) &&
+      !menuRightBtn.contains(event.target) &&
+      !overlay.contains(event.target)  // opcional se overlay cobre tudo
+    ) {
+      closeMenus();
+    }
+  }
+});
+
   </script>
 
 <script>
