@@ -258,6 +258,23 @@ document.querySelectorAll('.side-menu a').forEach(link => {
   });
 </script>
 
+<script>
+  const containers = document.querySelectorAll('.image-containers');
+
+  containers.forEach(container => {
+    container.addEventListener('touchstart', () => {
+      container.classList.add('hover-touch');
+    });
+
+    container.addEventListener('touchend', () => {
+      setTimeout(() => {
+        container.classList.remove('hover-touch');
+      }, 500); // efeito dura 0.5s
+    });
+  });
+</script>
+
+
 
 </body>
 </html>

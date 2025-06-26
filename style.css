@@ -468,14 +468,17 @@ footer {
   pointer-events: none;
 }
 
+.image-containers.hover-touch img,
 .image-containers:hover img {
   transform: scale(1.1);
   filter: brightness(0.7);
 }
 
+.image-containers.hover-touch .overlay,
 .image-containers:hover .overlay {
   opacity: 1;
 }
+
 
 .fab.fa-instagram {
   font-family: 'Font Awesome 5 Brands';
