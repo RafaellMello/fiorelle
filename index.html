@@ -168,9 +168,16 @@ overlay.addEventListener('click', closeMenus);
 document.querySelectorAll('.side-menu a').forEach(link => {
   link.addEventListener('click', closeMenus);
 });
-
-
   </script>
+
+<script>
+  document.querySelectorAll('.btn-comprar').forEach(btn => {
+    btn.addEventListener('click', () => {
+      window.open("https://wa.me/5521999218292?text=Ol%C3%A1%2C%20Gost%C3%A1ria%20de%20fazer%20um%20Pedido!", "_blank");
+    });
+  });
+</script>
+
 
 </body>
 </html>
