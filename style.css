@@ -463,9 +463,14 @@ footer {
   transform: translate(-50%, -50%);
   opacity: 0;
   transition: opacity 0.8s ease;
-  color: white;
+  color: white;              /* deixa o ícone branco */
   font-size: 40px;
   pointer-events: none;
+  z-index: 10;               /* garante que fique sobre a imagem */
+  background-color: transparent; /* sem fundo para não cobrir a imagem */
+  display: flex;             /* para centralizar o ícone */
+  align-items: center;
+  justify-content: center;
 }
 
 .image-containers.hover-touch img,
@@ -477,11 +482,6 @@ footer {
 .image-containers.hover-touch .overlay,
 .image-containers:hover .overlay {
   opacity: 1;
-}
-
-
-.fab.fa-instagram {
-  font-family: 'Font Awesome 5 Brands';
 }
 
 .image-items a {
