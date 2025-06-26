@@ -14,24 +14,40 @@
   </div>
 
   <!-- Header com logo e menu -->
-  <header>
-    <div class="header-content">
-      <div class="logo">Fiorelle™</div>
-      <nav class="main-menu">
-        <a href="#joias">Joias</a>
-        <a href="#casamento">Casamento</a>
-        <a href="#relogios">Relógios</a>
-        <a href="#acessorios">Acessórios</a>
-        <a href="#masculino">Masculino</a>
-        <a href="#presentes">Presentes</a>
-        <a href="#sale">Sale</a>
-      </nav>
-      <div class="header-icons">
-        <input type="text" placeholder="Buscar" class="search-input">
-        <span class="icon">&#128722;</span>
-      </div>
-    </div>
-  </header>
+<header>
+<section class="mobile-header">
+  <div class="menu-btn" id="menu-left">&#9776;</div>
+  <img src="pics/favicon.png" alt="Logo" class="logo" />
+  <div class="menu-btn" id="menu-right">&#9776;</div>
+</section>
+
+<nav class="side-menu" id="side-menu-left">
+  <div class="side-menu-title">Conheça nossas Coleções</div>
+  <a href="#joias">Joias</a>
+  <a href="#casamento">Casamento</a>
+  <a href="#relogios">Relógios</a>
+  <a href="#acessorios">Acessórios</a>
+  <a href="#masculino">Masculino</a>
+  <a href="#presentes">Presentes</a>
+  <a href="#sale">Sale</a>
+</nav>
+
+<nav class="side-menu" id="side-menu-right">
+  <div class="side-menu-title">Conheça nossas Coleções</div>
+  <a href="#joias">Joias</a>
+  <a href="#casamento">Casamento</a>
+  <a href="#relogios">Relógios</a>
+  <a href="#acessorios">Acessórios</a>
+  <a href="#masculino">Masculino</a>
+  <a href="#presentes">Presentes</a>
+  <a href="#sale">Sale</a>
+</nav>
+
+
+<div class="overlay" id="overlay"></div>
+</header>
+
+
 
   <!-- Banner principal só com slideshow full width -->
   <section class="hero-banner">
@@ -113,15 +129,48 @@
     const bannerImg = document.getElementById("banner-image");
 
     function changeImage() {
-      bannerImg.classList.add("fade-out");
-      setTimeout(() => {
-        currentIndex = (currentIndex + 1) % bannerImages.length;
-        bannerImg.src = bannerImages[currentIndex];
-        bannerImg.classList.remove("fade-out");
-      }, 1000); // tempo do fade-out
-    }
+  currentIndex = (currentIndex + 1) % bannerImages.length;
+  bannerImg.src = bannerImages[currentIndex];
+}
+
 
     setInterval(changeImage, 1000000000000000);
   </script>
+
+  <script>
+    const menuLeftBtn = document.getElementById('menu-left');
+const menuRightBtn = document.getElementById('menu-right');
+const sideMenuLeft = document.getElementById('side-menu-left');
+const sideMenuRight = document.getElementById('side-menu-right');
+const overlay = document.getElementById('overlay');
+
+function openMenu(side) {
+  if (side === 'left') {
+    sideMenuLeft.classList.add('open-left');
+    sideMenuRight.classList.remove('open-right');
+  } else if (side === 'right') {
+    sideMenuRight.classList.add('open-right');
+    sideMenuLeft.classList.remove('open-left');
+  }
+  overlay.classList.add('active');
+}
+
+function closeMenus() {
+  sideMenuLeft.classList.remove('open-left');
+  sideMenuRight.classList.remove('open-right');
+  overlay.classList.remove('active');
+}
+
+menuLeftBtn.addEventListener('click', () => openMenu('left'));
+menuRightBtn.addEventListener('click', () => openMenu('right'));
+overlay.addEventListener('click', closeMenus);
+
+document.querySelectorAll('.side-menu a').forEach(link => {
+  link.addEventListener('click', closeMenus);
+});
+
+
+  </script>
+
 </body>
 </html>

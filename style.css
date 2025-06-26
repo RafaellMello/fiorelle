@@ -265,7 +265,13 @@ footer {
 
   /* Ajuste para o banner responsivo */
   .hero-banner {
-    padding: 0;
+    height: auto; /* Remove a altura fixa no mobile */
+  }
+
+  .hero-banner img {
+    height: auto;
+    width: 100%;
+    object-fit: contain; /* ou "cover" se quiser preencher */
   }
 
   .main-menu {
@@ -277,4 +283,128 @@ footer {
     width: 100%;
     margin: 10px 0;
   }
+
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr); /* Duas colunas no celular */
+    padding: 30px 5%;
+    gap: 20px;
+  }
+
+  .product-grid .product-card img {
+    width: 177px;
+    height: 290px;
+    object-fit: cover;
+    margin: 0 auto;
+    display: block;
+  }
 }
+
+/* HEADER E SIDEBARD */
+
+/* Header mobile */
+.mobile-header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 50px;
+  background: #fff;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+  z-index: 1000;
+}
+
+.menu-btn {
+  font-size: 24px;
+  cursor: pointer;
+  user-select: none;
+  width: 40px;
+  text-align: center;
+}
+
+.logo {
+  height: 32px;
+  object-fit: contain;
+}
+
+.side-menu {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 250px;
+  background: #fff;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+  padding-top: 00px;
+  transition: transform 0.3s ease;
+  z-index: 1100;
+  overflow-y: auto;
+}
+
+/* menu esquerdo - inicia fora da tela à esquerda */
+#side-menu-left {
+  left: 0;
+  transform: translateX(-100%);
+}
+
+/* menu direito - inicia fora da tela à direita */
+#side-menu-right {
+  right: 0;
+  transform: translateX(100%);
+}
+
+/* quando aberto, ambos ficam na posição zero (visível) */
+.side-menu.open-left {
+  transform: translateX(0) !important;
+}
+
+.side-menu.open-right {
+  transform: translateX(0) !important;
+}
+
+.side-menu a {
+  display: block;       /* Faz os links ocuparem toda largura */
+  padding: 15px 20px;   /* Espaçamento interno */
+  text-decoration: none; /* Remove sublinhado */
+  color: #333;          /* Cor do texto */
+  border-bottom: 1px solid #eee; /* Linha divisória */
+  font-size: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.side-menu a:hover {
+  background-color: #f0f0f0; /* Cor de fundo no hover */
+}
+
+.side-menu-title {
+  font-weight: 500;
+  font-size: 18px;
+  padding: 20px;
+  border-bottom: 1px solid #ddd;
+  color: #222;
+  background-color: #f9f9f9;
+  user-select: none;
+}
+
+
+/* overlay */
+.overlay {
+  position: fixed;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.3);
+  z-index: 1050;
+  display: none;
+}
+
+.overlay.active {
+  display: block;
+}
+
+
+
+
+
+
+
+
+
