@@ -108,7 +108,7 @@ header {
 
 .section-header {
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 
 .section-header h2 {
@@ -122,13 +122,33 @@ header {
 }
 
 .section-header .subtitle {
-  font-family: 'Georgia', sans-serif;
-  font-weight: 700;
-  font-size: 1.25rem;
-  color: #000000; /* vermelho forte para dar destaque */
-  letter-spacing: 0.15em;
-  margin-top: 0;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 100;
+  font-size: 15px;
+  color: #575656; 
+  letter-spacing: 0px;
+  margin-top: -15px;
+  margin-bottom: -10px;
+  line-height: 1.2;
 }
+
+.subtitle::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 2px;
+  background-color: #000;
+  margin: 8px auto 0; /* margem para espaçamento entre o texto e a linha */
+}
+
+@media (max-width: 768px) {
+  .section-header .subtitle {
+    text-align: justify;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
 
 
 .product-grid {
