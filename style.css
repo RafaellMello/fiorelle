@@ -265,7 +265,7 @@ footer {
 }
 
 .product-grid .product-card img {
-  width: 350px;
+  width: 357px;
   height: 522px;
   object-fit: cover;
   margin: 0 auto;
@@ -273,21 +273,24 @@ footer {
 }
 
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .header-content {
     flex-direction: column;
     align-items: flex-start;
   }
 
-  /* Ajuste para o banner responsivo */
+@media (max-width: 768px) {
   .hero-banner {
-    height: auto; /* Remove a altura fixa no mobile */
+    width: 100%;
+    height: auto;
   }
 
+  .hero-banner picture,
   .hero-banner img {
-    height: auto;
     width: 100%;
-    object-fit: contain; /* ou "cover" se quiser preencher */
+    height: auto;
+    object-fit: unset;
+    display: block;
   }
 
   .main-menu {
@@ -301,19 +304,38 @@ footer {
   }
 
   .product-grid {
-    grid-template-columns: repeat(2, 1fr); /* Duas colunas no celular */
+    grid-template-columns: repeat(2, 1fr);
     padding: 30px 5%;
     gap: 20px;
   }
 
   .product-grid .product-card img {
-    width: 177px;
+    width: 100%;
     height: 290px;
     object-fit: cover;
     margin: 0 auto;
     display: block;
   }
 }
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .hero-banner {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+  }
+
+  .hero-banner picture,
+  .hero-banner img {
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* <-- alterado de contain para cover */
+    display: block;
+  }
+}
+}
+
+
 
 /* HEADER E SIDEBARD */
 
