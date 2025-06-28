@@ -563,7 +563,9 @@ footer {
 
 
 
-
+.ajuste-produto4 {
+  object-position: 120% center; /* ou até 85% para puxar mais */
+}
 
 @media (max-width: 768px) {
 .ajuste-produto4 {
@@ -571,6 +573,4 @@ footer {
 }
 }
 
-.ajuste-produto4 {
-  object-position: 120% center; /* ou até 85% para puxar mais */
-}
+
