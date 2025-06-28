@@ -566,5 +566,7 @@ footer {
 
 
 
-
+.ajuste-produto4 {
+  object-position: right center; /* centraliza verticalmente, e joga o foco da imagem mais pra direita */
+}
 
