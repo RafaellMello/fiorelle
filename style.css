@@ -9,6 +9,13 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Georgia Pro';
+  src: url('fonts/GeorgiaProFonts/GeorgiaPro-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 
 * {
   margin: 0;
@@ -50,11 +57,56 @@ header {
   margin: 0 auto;
 }
 
-.logo {
-  font-size: 24px;
+/* Por padrão, oculta elementos controlados por media queries */
+.desktop-title {
+  display: none;
+  font-size: 35px;
   font-weight: bold;
-  letter-spacing: 1px;
+  position: relative;
+  font-family: 'Georgia Pro', Georgia, serif;
 }
+
+/* Em telas maiores, exibe o título e oculta a logo */
+@media (min-width: 769px) {
+  .mobile-only {
+    display: none;
+  }
+
+  .desktop-title {
+    display: block;
+  }
+}
+
+
+.mobile-only {
+  display: none;
+  height: 30px; /* ajuste conforme necessário */
+}
+
+/* Em telas pequenas (até 768px), mostra a logo e oculta o texto */
+@media (max-width: 768px) {
+  .mobile-only {
+    display: block;
+  }
+
+  .desktop-title {
+    display: none;
+  }
+}
+
+/* Em telas maiores, mostra o texto e oculta a logo */
+@media (min-width: 769px) {
+  .mobile-only {
+    display: none;
+  }
+
+  .desktop-title {
+    display: block;
+    text-align: center;
+  }
+}
+
+
 
 .main-menu a {
   margin: 0 12px;
@@ -174,10 +226,29 @@ header {
   border-radius: 8px;
   overflow: hidden;
   text-align: center;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  box-shadow: 1 2px 4px rgba(0,0,0,0.05);
   transition: all 0.3s ease;
   opacity: 0;
   transform: translateY(30px);
+}
+
+.product-card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.product-card.show:hover {
+  transform: translateY(0) scale(1.03);
+  box-shadow: 0 0 12px 4px #099242;
+  border-color: #245e43;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+
+.product-card:hover {
+  box-shadow: 0 0 12px 4px rgba(255, 215, 0, 0.5); /* glow dourado */
+  border-color: gold; /* realça o contorno dourado */
+  transform: scale(1.03); /* cresce o card todo */
 }
 
 .product-card img {
@@ -372,7 +443,7 @@ footer {
 .mobile-header {
   position: fixed;
   top: 0; left: 0; right: 0;
-  height: 50px;
+  height: 60px;
   background: #fff;
   box-shadow: 0 1px 4px rgba(0,0,0,0.1);
   display: flex;
