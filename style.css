@@ -226,7 +226,7 @@ header {
   border-radius: 8px;
   overflow: hidden;
   text-align: center;
-  box-shadow: 1 2px 4px rgba(0,0,0,0.05);
+  box-shadow: 1px 2px 4px rgba(0,0,0,0.05);
   transition: all 0.3s ease;
   opacity: 0;
   transform: translateY(30px);
@@ -237,18 +237,19 @@ header {
   transform: translateY(0);
 }
 
-.product-card.show:hover {
-  transform: translateY(0) scale(1.03);
-  box-shadow: 0 0 12px 4px #099242;
-  border-color: #245e43;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
-}
+@media (hover: hover) and (pointer: fine) {
+  .product-card.show:hover {
+    transform: translateY(0) scale(1.03);
+    box-shadow: 0 0 12px 4px #099242;
+    border-color: #245e43;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+  }
 
-
-.product-card:hover {
-  box-shadow: 0 0 12px 4px rgba(255, 215, 0, 0.5); /* glow dourado */
-  border-color: gold; /* realça o contorno dourado */
-  transform: scale(1.03); /* cresce o card todo */
+  .product-card:hover {
+    box-shadow: 0 0 12px 4px rgba(255, 215, 0, 0.5);
+    border-color: gold;
+    transform: scale(1.03);
+  }
 }
 
 .product-card img {
@@ -264,13 +265,13 @@ header {
   margin-inline: 9px;
 }
 
-
 .product-card .preco {
   font-family: 'Open Sans', sans-serif;
-  font-size: 1rem;
+  font-size: 18px;
   font-weight: 600;
   color: #000000;
   margin-bottom: 5px;
+  text-shadow: 0 0 3px rgba(0, 0, 0, 0.15);
 }
 
 .product-card .parcelado {
@@ -291,7 +292,7 @@ header {
   cursor: pointer;
   transition: background-color 0.3s ease;
   font-size: 14px;
-  text-decoration: none; /* REMOVE sublinhado */
+  text-decoration: none;
   text-align: center;
   margin-bottom: 10px;
 }
@@ -309,6 +310,53 @@ header {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* ===== ALTERAÇÕES SOMENTE PARA CELULAR ===== */
+@media (max-width: 768px) {
+  .product-card {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .product-card img {
+    object-fit: cover;
+    height: auto;
+    flex-shrink: 0;
+  }
+
+  .product-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    flex-grow: 1;
+    padding: 12px 8px;
+  }
+
+  .product-title {
+    font-size: 16px;
+    font-weight: normal;
+    margin: 0 0 8px;
+  }
+
+  .product-card .preco {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+
+  .product-card .parcelado {
+    font-size: 0.9rem;
+    margin-bottom: 12px;
+  }
+
+  .product-card .btn-comprar {
+    font-size: 16px;
+    width: 100%;
+    padding: 12px 0;
+    margin-bottom: 0;
+  }
+}
+
+
 
 /* FOOTER */
 
