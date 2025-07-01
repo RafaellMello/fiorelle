@@ -322,6 +322,7 @@ header {
     object-fit: cover;
     height: auto;
     flex-shrink: 0;
+    margin-bottom: 10px; /* Espaçamento fixo entre imagem e título */
   }
 
   .product-content {
@@ -329,13 +330,14 @@ header {
     flex-direction: column;
     justify-content: flex-end;
     flex-grow: 1;
-    padding: 12px 8px;
+    padding: 15px 8px;
   }
 
   .product-title {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: normal;
-    margin: 0 0 8px;
+    margin: 0 8px 8px; /* sem margem superior, só laterais e inferior */
+    padding: 0;
   }
 
   .product-card .preco {
@@ -353,6 +355,16 @@ header {
     margin-bottom: 0;
   }
 }
+
+/* EXCEÇÕES */
+
+@media (min-width: 380px) and (max-width: 396px) {
+  h3.product-title.colar-barbie {
+    transform: translateY(-20px); /* sobe 40px o título */
+  }
+}
+
+
 
 
 
