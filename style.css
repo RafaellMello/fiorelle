@@ -364,7 +364,11 @@ header {
   }
 }
 
-
+@media (min-width: 380px) and (max-width: 396px) {
+  h3.product-title.colar-barbie2 {
+    transform: translateY(-35px); /* sobe 40px o título */
+  }
+}
 
 
 
