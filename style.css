@@ -472,7 +472,7 @@ footer {
   }
 
   .product-grid .product-card img {
-    width: 100%;
+    width: 165px;
     height: 290px;
     object-fit: cover;
     margin: 0 auto;
