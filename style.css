@@ -42,7 +42,7 @@ body {
 header {
   background-color: #fff;
   border-bottom: 1px solid #ddd;
-  padding: 15px 30px;
+  padding: 0px 30px;
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -457,6 +457,7 @@ footer {
   .hero-banner {
     width: 100%;
     height: auto;
+    margin-top: -0px;
   }
 
   .hero-banner picture,
