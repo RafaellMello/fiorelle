@@ -86,11 +86,12 @@ header {
 /* Em telas pequenas (até 768px), mostra a logo e oculta o texto */
 @media (max-width: 768px) {
   .mobile-only {
-    display: block;
+    display: none;
   }
 
   .desktop-title {
-    display: none;
+    display: block;
+    font-size: 1.8rem;
   }
 }
 
@@ -360,13 +361,24 @@ header {
 
 @media (min-width: 380px) and (max-width: 396px) {
   h3.product-title.colar-barbie {
-    transform: translateY(-20px); /* sobe 40px o título */
+    transform: translateY(-20px);
+  }
+
+  h3.product-title.colar-barbie2 {
+    transform: translateY(-35px);
   }
 }
 
-@media (min-width: 380px) and (max-width: 396px) {
+
+@media (min-width: 413px) and (max-width: 431px) {
   h3.product-title.colar-barbie2 {
     transform: translateY(-35px); /* sobe 40px o título */
+  }
+  h3.product-title.colar-barbie {
+    transform: translateY(-20px);
+  }
+  h3.product-title.colar-barbie3 {
+    transform: translateY(-10px);
   }
 }
 
